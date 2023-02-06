@@ -5,7 +5,7 @@ var student = [
     height: 1.79,
     sex: "masculino",
     room: "Trindade",
-    matematica: 8,
+    matematica: 5,
   },
   {
     name: "Maria",
@@ -13,7 +13,7 @@ var student = [
     height: 1.6,
     sex: "feminino",
     room: "Trindade",
-    matematica: 7,
+    matematica: 4,
   },
   {
     name: "Carlos",
@@ -48,9 +48,14 @@ var media =
     student[3].matematica +
     student[4].matematica) /
   5;
-console.log(student);
-console.log(media);
-console.log(aprovado());
+
+function medias() {
+  var total = 0;
+  for (var i = 0; i < student.length; i++) {
+    total = total + student[i].matematica;
+  }
+  return total / 5;
+}
 
 function aprovado() {
   for (var i = 0; i < student.length; i++) {
@@ -58,6 +63,14 @@ function aprovado() {
       console.log(
         `${student[i].name} foi aprovado com nota ${student[i].nota}`
       );
+    } else {
+      console.log(
+        `${student[i].name} foi reprovado com nota ${student[i].nota}`
+      );
     }
   }
 }
+
+console.log(student);
+console.log(medias());
+aprovado();
