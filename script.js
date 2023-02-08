@@ -41,14 +41,6 @@ var student = [
   },
 ];
 
-var media =
-  (student[0].matematica +
-    student[1].matematica +
-    student[2].matematica +
-    student[3].matematica +
-    student[4].matematica) /
-  5;
-
 function medias() {
   var total = 0;
   for (var i = 0; i < student.length; i++) {
@@ -72,5 +64,5 @@ function aprovado() {
 }
 
 console.log(student);
-console.log(medias());
+console.log("A média das notas é:" + medias());
 aprovado();
